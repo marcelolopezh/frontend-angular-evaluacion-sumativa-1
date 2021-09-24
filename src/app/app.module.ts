@@ -12,6 +12,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { HomeComponent } from './compartida/home/home.component';
+import { ErrorComponent } from './compartida/error/error.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HomeComponent } from './compartida/home/home.component';
     CarruselComponent,
     BuscadorComponent,
     HomeComponent,
+    ErrorComponent,
 
   ],
   imports: [
