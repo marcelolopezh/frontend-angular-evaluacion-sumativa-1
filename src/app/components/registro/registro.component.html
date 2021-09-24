@@ -1,1 +1,34 @@
-<p>registro works!</p>
+<div class="container bg-white">
+    <div class="form-container row">
+        <form class="col-md-6 form-register col-xs-12">
+            <h2> Registrarse </h2>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre :</label>
+                <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido :</label>
+                <input type="text" class="form-control" id="apellido" aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Dirección Email :</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Nunca compartiremos tu información personal.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Clave :</label>
+                <input type="password" class="form-control" id="password">
+                <div id="passHelp" class="form-text">Mayor a 8 caracteres.</div>
+            </div>
+            <div class="mb-3">
+                <label for="passwordConf" class="form-label">Confirme su clave :</label>
+                <input type="password" class="form-control" id="passwordConf">
+            </div>
+            <button type="button" class="btn btn-primary" id="registrar">Registrar</button> <br /> <br />
+            <div class="alert alert-success text-center" role="alert" id="registroExitoso">
+            </div>
+        </form>
+    </div>
+</div>
