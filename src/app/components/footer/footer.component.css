@@ -1,0 +1,19 @@
+#logo-footer {
+    margin-right: 16px;
+}
+
+#footer-link {
+    color: white;
+}
+
+.footer-main {
+    background-color: #0eac6a;
+    padding: 16px;
+    color: white;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
