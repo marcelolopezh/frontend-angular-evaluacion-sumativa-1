@@ -13,6 +13,13 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { HomeComponent } from './compartida/home/home.component';
 import { ErrorComponent } from './compartida/error/error.component';
+import { BindComponent } from './components/bind/bind.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoService } from './services/producto.service';
+import { CategoriaService } from './services/categoria.service';
+import { ConfirmarcompraComponent } from './components/confirmarcompra/confirmarcompra.component';
+import { ProductodetalleComponent } from './components/productodetalle/productodetalle.component';
 
 
 @NgModule({
@@ -29,13 +36,19 @@ import { ErrorComponent } from './compartida/error/error.component';
     BuscadorComponent,
     HomeComponent,
     ErrorComponent,
+    BindComponent,
+    ConfirmarcompraComponent,
+    ProductodetalleComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //PARA TRABAJAR CON ngModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ProductoService,CategoriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

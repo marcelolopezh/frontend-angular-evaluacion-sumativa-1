@@ -1,25 +1,15 @@
+hola
 <div class="row">
-    <div class="col-md-8 offset-md-2 mb-5">
-        <div class="card ">
-            <div class="card-header">
-                <h4 class="text-center">Frutas & Verduras</h4>
-                <app-buscador></app-buscador>
-            </div>
+    <div *ngFor="let categoria of categoriaService.categorias" class="col-md-3 mb-5">
+        <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">Frutas</div>
+                    <div class="col-md-12">
+                        <div class="card cardStyle">
+                            <div class="card-header">{{categoria.nombre}}</div>
                             <div class="card-body">
-                                <img src="assets/img/frutas.jfif" class="img-thumbnail" width="300px" alt="Manzana">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">Verduras</div>
-                            <div class="card-body">
-                                <img src="assets/img/verduras.jpg" class="img-thumbnail" width="300px" alt="Peras">
+                                <img src='{{categoria.img}}' width="10%" alt="Manzana">
+                                <h3 class="card-title text-end">${{categoria.descripcion}}/Kg</h3>
                             </div>
                         </div>
                     </div>

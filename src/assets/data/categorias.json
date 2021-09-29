@@ -1,0 +1,19 @@
+{
+    "categorias": [{
+        "nombre": "Primera Selección",
+        "descipcion": "Importados",
+        "img": ""
+    }, {
+        "nombre": "Segunda Selección",
+        "descipcion": "Importados",
+        "img": ""
+    }, {
+        "nombre": "Congelados",
+        "descipcion": "Frutas y Verduras congeladas",
+        "img": ""
+    }, {
+        "nombre": "Surtidos",
+        "descipcion": "Frutas y Verduras surtidas",
+        "img": ""
+    }]
+}

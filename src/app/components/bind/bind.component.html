@@ -1,0 +1,72 @@
+<h3>fecha1 => {{fecha1 | date:'yyyy-MM-dd'}}</h3>
+<h3>fecha3 => {{fecha3}}</h3>
+<h3>fecha4 => {{fecha4}}</h3>
+
+<!--Llamado al get del component-->
+<h3>Mes Actual => {{ mes }}</h3>
+
+<button class="btn btn-success" (click)="getFecha()">Obtener Fecha</button>
+<h2>{{fecha | date:'dd-MM-yyyy'}}</h2>
+
+
+<button class="btn btn-success" (click)="sumarContador()">+</button>
+<button class="btn btn-danger" (click)="restarContador()">-</button>
+<h2>Contador = {{getContador}}</h2>
+
+<hr>
+
+<ul>
+    <li *ngFor="let dia of dias;let i = index">
+        <b *ngIf="getDia == i; else templateName">{{dia}}</b>
+        <ng-template #templateName>
+            {{dia}}
+        </ng-template>
+
+    </li>
+    <button class="btn btn-warning" (click)="eliminarDia()">Eliminar Dia</button>
+    <p>Eliminado = {{eliminado}}</p>
+</ul>
+
+<input type="text" #nuevoDia class="form-control">
+<button (click)="addDia(nuevoDia.value)" class="btn btn-success">Añadir Dia</button>
+
+<hr>
+
+
+<form (ngSubmit)="insertar()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">{{email}}</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input [(ngModel)]="password" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <small id="emailHelp" class="form-text text-muted">{{password}}</small>
+
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{categoria}}
+<!-- 
+<form (ngSubmit)="insertar2($event)">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->

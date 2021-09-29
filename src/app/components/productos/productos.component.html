@@ -1,24 +1,43 @@
-<div class="row">
-    <div class="col-md-8 offset-md-2 mb-5">
-        <div class="card ">
-            <div class="card-header">
-                <h4 class="text-center">Productos</h4>
-            </div>
+<div class="row mt-5">
+    <div class="card" *ngIf="carro.length!=0">
+        <div class="card-header">
+            <h4 class="card-title">Carro de Compras</h4>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li *ngFor="let producto of productoService.carro; let i = index">Kg - {{producto.nombre}}, ${{producto.precio}} <button (click)="eliminarProducto(producto,i)" class="btn btn-danger btn-sm">x</button> </li>
+            </ul>
+            <hr>
+            <h5>Total = ${{getTotal()}}</h5>
+        </div>
+        <button class="btn btn-primary" (click)="confirmarCompra()">Confirmar Compra</button>
+    </div>
+</div>
+
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <input class="form-control" placeholder="Buscar Producto por Nombre" [(ngModel)]="busqueda" name="busqueda">
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div *ngFor="let producto of productoService.productos" class="col-md-4 mb-5">
+        <div class="card" *ngIf="busqueda=='' || producto.nombre.toLowerCase().indexOf(busqueda.toLowerCase()) > -1">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">Manzana</div>
+                    <div class="col-md-12">
+                        <div class="card cardStyle">
+                            <div class="card-header">{{producto.nombre}}</div>
                             <div class="card-body">
-                                <img src="assets/img/manzana.jpeg" class="img-thumbnail" width="300px" alt="Manzana">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">Peras</div>
-                            <div class="card-body">
-                                <img src="assets/img/pera.jpg" class="img-thumbnail" width="300px" alt="Peras">
+                                <img src='{{producto.img}}' width="90%" alt="{{producto.nombre}}">
+                                <div class="position-sticky">
+                                    <h3 class="card-title ">${{producto.precio}}/Kg</h3>
+                                </div>
+                                <button class="btn btn-primary" (click)="anadirCarro(producto)">+</button>
+                                <button class="btn">Cant Disp {{producto.cantidad}}</button>
+                                <hr>
+                                <button class="btn btn-secondary" routerLink="/producto/{{producto.id}}">Ver Detalle</button>
                             </div>
                         </div>
                     </div>

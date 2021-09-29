@@ -1,0 +1,22 @@
+<div class="row bg-white">
+    <div class="col-md-12">
+        <div class="card-header">
+            <h3 class="card-title">Confirmar Compra</h3>
+        </div>
+        <div class="card-body">
+            <div>
+                <ul>
+                    <li *ngFor="let producto of productoService.carro">
+                        {{producto.nombre}} - ${{producto.precio}}
+                    </li>
+                </ul>
+                <h4>Total = ${{getTotal()}}</h4>
+                <button class="btn btn-primary" (click)="pagoRealizado=true">Proceder al Pago</button>
+                <div *ngIf="pagoRealizado" class="alert alert-success" role="alert">
+                    Se ha realizado el pago de los productos
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

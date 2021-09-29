@@ -1,0 +1,46 @@
+{
+    "productos": [{
+            "id": 1,
+            "nombre": "Manzana Verde",
+            "precio": 500,
+            "img": "assets/img/manzana.jfif",
+            "cantidad": 50
+        },
+        {
+            "id": 2,
+            "nombre": "Uvas",
+            "precio": 700,
+            "img": "assets/img/uvas.jpg",
+            "cantidad": 50
+        },
+        {
+            "id": 3,
+            "nombre": "Mandarinas",
+            "precio": 800,
+            "img": "assets/img/mandarina.jpg",
+            "cantidad": 30
+        },
+        {
+            "id": 4,
+            "nombre": "Naranjas",
+            "precio": 900,
+            "img": "assets/img/naranja.jpg",
+            "cantidad": 15
+
+        },
+        {
+            "id": 5,
+            "nombre": "Limones",
+            "precio": 600,
+            "img": "assets/img/limones.jpg",
+            "cantidad": 5
+        },
+        {
+            "id": 6,
+            "nombre": "Paltas",
+            "precio": 5600,
+            "img": "assets/img/palta.jpg",
+            "cantidad": 25
+        }
+    ]
+}
