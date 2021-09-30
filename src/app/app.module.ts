@@ -20,6 +20,7 @@ import { ProductoService } from './services/producto.service';
 import { CategoriaService } from './services/categoria.service';
 import { ConfirmarcompraComponent } from './components/confirmarcompra/confirmarcompra.component';
 import { ProductodetalleComponent } from './components/productodetalle/productodetalle.component';
+import { PagoModule } from './components/pago/pago.module';
 
 
 @NgModule({
@@ -39,7 +40,6 @@ import { ProductodetalleComponent } from './components/productodetalle/productod
     BindComponent,
     ConfirmarcompraComponent,
     ProductodetalleComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -47,6 +47,7 @@ import { ProductodetalleComponent } from './components/productodetalle/productod
     //PARA TRABAJAR CON ngModule
     FormsModule,
     HttpClientModule,
+    PagoModule,
   ],
   providers: [ProductoService,CategoriaService],
   bootstrap: [AppComponent]

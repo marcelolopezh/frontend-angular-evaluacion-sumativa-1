@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="text-center"> Detalles de Pago</h4>
+        <div class="alert alert-danger" role="alert" *ngIf="errors.length>0">
+            <ul>
+                <li *ngFor="let error of errors">{{error}}</li>
+            </ul>
+        </div>
+        <form (ngSubmit)="confirmarPago()" class="form-group">
+            <h6>Tipo Tarjeta</h6>
+            <input type="text" [(ngModel)]="tipo_tarjeta" name="tipo_tarjeta" class="form-control mb-4" [disabled]="!envioIsCorrect" placeholder="Credito o Debito">
+
+            <h6>Nombre de Cliente</h6>
+            <input type="text" [(ngModel)]="nombre_cliente" name="nombre_cliente" class="form-control mb-4" [disabled]="!envioIsCorrect">
+
+            <h6>Número de Tarjeta</h6>
+            <input type="number" [(ngModel)]="numero_tarjeta" name="numero_tarjeta" class="form-control mb-4" [disabled]="!envioIsCorrect">
+
+            <h6>Código de Seguridad</h6>
+            <input type="number" [(ngModel)]="codigo_seguridad" name="codigo_seguridad" class="form-control mb-4" [disabled]="!envioIsCorrect">
+
+            <h6>Mes Expiración</h6>
+            <input type="number" [(ngModel)]="mes_expiracion" name="mes_expiracion" class="form-control mb-4" [disabled]="!envioIsCorrect">
+
+            <h6>Año Expiración</h6>
+            <input type="number" [(ngModel)]="anio_expiracion" name="anio_expiracion" class="form-control mb-4" [disabled]="!envioIsCorrect">
+
+            <button type="submit" class="btn btn-primary" [disabled]="!envioIsCorrect">Confirmar</button>
+        </form>
+    </div>
+</div>

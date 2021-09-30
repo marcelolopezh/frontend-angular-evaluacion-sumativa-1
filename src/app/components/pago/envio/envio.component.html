@@ -1,0 +1,90 @@
+<div class="card" *ngIf="!detallePago">
+    <div class="card-header text-center">Datos de Cliente</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="text-center">Detalles de Envío</h4>
+                <div class="alert alert-danger" role="alert" *ngIf="errors.length>0">
+                    <ul>
+                        <li *ngFor="let error of errors">{{error}}</li>
+                    </ul>
+                </div>
+                <form (ngSubmit)="confirmarDatosEnvio()" class="form-group">
+                    <h6>País</h6>
+                    <input [(ngModel)]="pais" name="pais" type="text" class="form-control mb-4" [disabled]="envioIsCorrect">
+
+                    <h6>Región</h6>
+                    <input [(ngModel)]="region" name="region" type="text" class="form-control mb-4" [disabled]="envioIsCorrect">
+
+                    <h6>Ciudad</h6>
+                    <input [(ngModel)]="ciudad" name="ciudad" type="text" class="form-control mb-4" [disabled]="envioIsCorrect">
+
+                    <h6>Calle</h6>
+                    <input [(ngModel)]="calle" name="calle" type="text" class="form-control mb-4" [disabled]="envioIsCorrect">
+
+                    <h6>Código Postal</h6>
+                    <input [(ngModel)]="codigo_postal" name="codigo_postal" type="number" class="form-control mb-4" [disabled]="envioIsCorrect">
+
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <!-- Traspaso de Información Padre a Hijo -->
+                <app-pago [carro]="productoService.carro" [envioIsCorrect]="envioIsCorrect" [detalleEnvio]="envio" (propagar)="getPago($event)"></app-pago>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="detallePago">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">Detalle Pago</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h6>Tipo Tarjeta : {{pago.tipo_tarjeta}}</h6>
+                        <h6>Nombre Cliente : {{pago.nombre_cliente}}</h6>
+                        <h6>Numero Tarjeta : {{pago.numero_tarjeta}}</h6>
+                        <h6>Código Seguridad {{pago.codigo_seguridad}}</h6>
+                        <h6>Mes Expiración : {{pago.mes_expiracion}}</h6>
+                        <h6>Año Expiración} : {{pago.anio_expiracion}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">Detalle Envio</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h6>Pais : {{envio.pais}}</h6>
+                        <h6>Región : {{envio.region}}</h6>
+                        <h6>Ciudad : {{envio.ciudad}}</h6>
+                        <h6>Calle {{envio.calle}}</h6>
+                        <h6>Código Postal : {{envio.codigo_postal}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="detallePago">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header text-center">Detalle Productos</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h6 *ngFor="let producto of productoService.carro">
+                            {{producto.nombre}} - {{producto.precio}}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

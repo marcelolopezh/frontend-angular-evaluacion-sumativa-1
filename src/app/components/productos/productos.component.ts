@@ -38,7 +38,7 @@ export class ProductosComponent implements OnInit {
 
   confirmarCompra(){
     this.productoService.guardarCarro(this.carro);
-    this.router.navigateByUrl("/confirmarcompra")
+    this.router.navigateByUrl("/envio")
   }
 
  

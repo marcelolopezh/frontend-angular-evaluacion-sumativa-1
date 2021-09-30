@@ -6,6 +6,8 @@ import { BindComponent } from './components/bind/bind.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { ConfirmarcompraComponent } from './components/confirmarcompra/confirmarcompra.component';
 import { LoginComponent } from './components/login/login.component';
+import { EnvioComponent } from './components/pago/envio/envio.component';
+import { PagoComponent } from './components/pago/pago/pago.component';
 import { ProductodetalleComponent } from './components/productodetalle/productodetalle.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { RegistroComponent } from './components/registro/registro.component';
@@ -17,6 +19,8 @@ const routes: Routes=[
     {path: 'login', component: LoginComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'bind', component: BindComponent},
+    {path:'pago', component: PagoComponent},
+    {path:'envio', component: EnvioComponent},
     {path: 'confirmarcompra', component:ConfirmarcompraComponent},
     {path: '**', component: ErrorComponent},
 ];
